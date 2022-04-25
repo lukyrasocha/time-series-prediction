@@ -7,6 +7,7 @@ import sys
 import numpy as np
 import argparse
 
+#UNCOMMENT THESE TWO LINES IF YOU WISH TO EXPERIMENT REMOTELY BASED ON YOUR CONFIG FILE INCLUDED IN THE SAME DIRECTORY
 #ws = Workspace.from_config()
 #mlflow.set_tracking_uri(ws.get_mlflow_tracking_uri())
 
