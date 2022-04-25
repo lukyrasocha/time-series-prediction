@@ -34,12 +34,12 @@ You can experiment with two different models `KNN Regressor` and `Linear Regress
 
 KNN example
 ```
-python main.py modelname=knn n_neighbours=8 number_of_splits=5 weights=uniform
+python main.py --modelname=knn --n_neighbours=8 --number_of_splits=5 --weights=uniform
 ```
 
 Linear Regression example
 ```
-python main.py modelname=lin_reg polydegree=3 number_of_splits=5
+python main.py --modelname=lin_reg --polydegree=3 --number_of_splits=5
 ```
 If you are running the experiment locally you can run `mlflow ui` to view the runs (or in Azure ML studio > Experiments otherwise)
 
