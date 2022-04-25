@@ -1,6 +1,6 @@
 import pandas as pd
 import mlflow
-from utils.transformers import preprocessor
+#from utils.transformers import preprocessor
 from datetime import datetime
 from azureml.core import Workspace
 import sys
@@ -39,6 +39,57 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import Pipeline
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, PolynomialFeatures
+from sklearn.compose import ColumnTransformer
+
+
+class cardinal_to_degrees(BaseEstimator, TransformerMixin):
+    def fit(self,X,y=None):
+        return self
+    
+    def transform(self,X,y=None):
+        cardinal_directions = {
+            'N':0,
+            'NNE':22.5,
+            'NE':45,
+            'ENE':67.5,
+            'E':90,
+            'ESE':112.5,
+            'SE':135,
+            'SSE':157.5,
+            'S':180,
+            'SSW':202.5,
+            'SW':225,
+            'WSW':247.5,
+            'W':270,
+            'WNW':292.5,
+            'NW':315,
+            'NNW':337.5}
+        X_ = X.copy()
+    
+        for direction in cardinal_directions:
+            X_.loc[X_["Direction"] == direction, "Direction"] = cardinal_directions[direction]
+                    
+        return X_
+    
+    
+numeric_transformer = Pipeline(steps=[
+       ('imputer', SimpleImputer(strategy='mean'))
+      ,('scaler', StandardScaler())
+])
+
+preprocessor = ColumnTransformer(
+   transformers=[
+    ('numeric', numeric_transformer, ['Speed']),
+    ('decode', cardinal_to_degrees(), ['Direction'])
+]) 
+
 
 # Start a run
 name = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {model}" 
