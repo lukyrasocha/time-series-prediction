@@ -1,3 +1,5 @@
+#Assignment 3 - Mlflow with Azure
+#Author: Lukas Rasocha (inspired by a template provided by the lecturer)
 import pandas as pd
 import mlflow
 from utils.transformers import preprocessor
@@ -6,6 +8,13 @@ from azureml.core import Workspace
 import sys
 import numpy as np
 import argparse
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.svm import SVR
+from sklearn.model_selection import TimeSeriesSplit
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 #UNCOMMENT THESE TWO LINES IF YOU WISH TO EXPERIMENT REMOTELY BASED ON YOUR CONFIG FILE INCLUDED IN THE SAME DIRECTORY
 #ws = Workspace.from_config()
@@ -13,9 +22,6 @@ import argparse
 
 #SETUP
 mlflow.set_experiment("lukr - Assignment3")
-#model = sys.argv[2] if len(sys.argv) > 1 else 'lin_reg' 
-#if model not in ['knn','lin_reg']:
-#    raise "Error: Argument not known: default{knn,lin_reg}"
 
 parser = argparse.ArgumentParser()
 
@@ -31,14 +37,6 @@ model = args.modelname
 if model not in ['knn','lin_reg']:
     raise "Error: Argument not known: default{knn,lin_reg}"
 
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.svm import SVR
-from sklearn.model_selection import TimeSeriesSplit
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-
 # Start a run
 name = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {model}" 
 with mlflow.start_run(run_name=name):
@@ -47,12 +45,10 @@ with mlflow.start_run(run_name=name):
     df = df.drop(['Source_time','Lead_hours','ANM','Non-ANM'],axis=1)
     df.dropna(subset=['Total','Direction'], inplace=True) #Speed will be imputed in the pipeline
 
-    # TODO: Handle missing data
-
     mlflow.log_param('model_name', model)
     if model == 'lin_reg':
-        poly_degree = args.polydegree#int(sys.argv[3])
-        number_of_splits = args.number_of_splits #int(sys.argv[4])
+        poly_degree = args.polydegree
+        number_of_splits = args.number_of_splits
         pipeline = Pipeline(steps = [
                    ('preprocessor', preprocessor)
                   ,('poly_features', PolynomialFeatures(degree=poly_degree, include_bias=False))
@@ -64,9 +60,9 @@ with mlflow.start_run(run_name=name):
         
 
     else:
-        n_neighbours= args.n_neighbours #int(sys.argv[3])
-        weights = args.weights #sys.argv[4]
-        number_of_splits = args.number_of_splits #int(sys.argv[5])
+        n_neighbours= args.n_neighbours 
+        weights = args.weights 
+        number_of_splits = args.number_of_splits
         pipeline = Pipeline(steps = [
            ('preprocessor', preprocessor)
           ,('regressor',KNeighborsRegressor(n_neighbors=n_neighbours, weights=weights))
