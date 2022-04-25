@@ -13,6 +13,7 @@ import argparse
 
 #SETUP
 mlflow.set_experiment("please")
+mlflow.sklearn.autolog(log_input_examples=True, silent=True)
 #model = sys.argv[2] if len(sys.argv) > 1 else 'lin_reg' 
 #if model not in ['knn','lin_reg']:
 #    raise "Error: Argument not known: default{knn,lin_reg}"
