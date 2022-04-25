@@ -12,7 +12,7 @@ import argparse
 #mlflow.set_tracking_uri(ws.get_mlflow_tracking_uri())
 
 #SETUP
-mlflow.set_experiment("lukr - Assignment3")
+mlflow.set_experiment("please")
 #model = sys.argv[2] if len(sys.argv) > 1 else 'lin_reg' 
 #if model not in ['knn','lin_reg']:
 #    raise "Error: Argument not known: default{knn,lin_reg}"
