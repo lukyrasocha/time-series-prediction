@@ -6,7 +6,7 @@ Ml-flow ensures
 - Deployment
 
 Notes:
-There are 3 ways you can track your experiments, either you can choose to update your experiments on "http://training.itu.dk:5000/". Oryou can use Microsoft Azure Machine Learning Studio, or you can save them locally and use `mlflow ui` to display them on your localhost.
+There are 3 ways you can track your experiments, either you can choose to update your experiments on "https://training.itu.dk:5000/". Oryou can use Microsoft Azure Machine Learning Studio, or you can save them locally and use `mlflow ui` to display them on your localhost.
 
 For this assignment I decided to track my experiments on Microsoft Azure ML studio, since the UI looks nice and also wanted to get more familiar with azure.
 
