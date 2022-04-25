@@ -48,8 +48,3 @@ preprocessor = ColumnTransformer(
 ]) 
 
 
-pipeline = Pipeline(steps = [
-               ('preprocessor', preprocessor)
-              ,('poly_features', PolynomialFeatures(degree=3, include_bias=False))
-              ,('regressor',LinearRegression())
-           ])
