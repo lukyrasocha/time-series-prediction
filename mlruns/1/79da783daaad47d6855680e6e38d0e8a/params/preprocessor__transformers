@@ -1,0 +1,1 @@
+[('numeric', Pipeline(steps=[('imputer', SimpleImputer()), ('scaler', StandardScaler())]), ['Speed']), ('decode', cardinal_to_degrees(), ['Direction'])]

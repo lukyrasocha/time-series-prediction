@@ -1,0 +1,7 @@
+{
+  "mean_absolute_error-2_unknown_dataset-2": "mean_absolute_error(y_true=truth, y_pred=predictions)",
+  "mean_absolute_error-3_unknown_dataset-3": "mean_absolute_error(y_true=truth, y_pred=predictions)",
+  "mean_absolute_error-4_unknown_dataset-4": "mean_absolute_error(y_true=truth, y_pred=predictions)",
+  "mean_absolute_error-5_unknown_dataset-5": "mean_absolute_error(y_true=truth, y_pred=predictions)",
+  "mean_absolute_error_unknown_dataset": "mean_absolute_error(y_true=truth, y_pred=predictions)"
+}
