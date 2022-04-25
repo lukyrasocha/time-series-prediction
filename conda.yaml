@@ -1,0 +1,14 @@
+name: ml-flow-azure 
+channels:
+  - defaults
+dependencies:
+  - python>3.7
+  - pip>20
+  - numpy>1.19
+  - scikit-learn>0.23
+  - pip:
+    - mlflow
+    - matplotlib>3
+    - azureml
+    - azureml-core
+    - azureml-mlflow

@@ -1,0 +1,15 @@
+name: Regression 
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      model_name: {type: str, default: lin_reg}
+      poly_degree: {type: int, default: 3}
+      number_of_splits: {type: int, default: 5}
+      n_neighbours: {type: int, default: 8}
+      weights: {type: str, default: uniform}
+
+
+    command: "python main.py --modelname={model_name} --polydegree={poly_degree} --number_of_splits={number_of_splits} --n_neighbours={n_neighbours} --weights={weights}"
