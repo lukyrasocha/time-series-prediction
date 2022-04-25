@@ -113,3 +113,5 @@ with mlflow.start_run(run_name=name):
             var_score = np.var(scores)
             mlflow.log_metric(f"mean_{name}", mean_score)
             mlflow.log_metric(f"Variance_{name}", var_score)
+
+    mlflow.sklearn.log_model(pipeline, "model")
