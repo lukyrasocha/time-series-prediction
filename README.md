@@ -59,3 +59,27 @@ I set the default parameters to the ones that performed best, but if you wish to
 mlflow run . --experiment-name='lukr - Assignment3' -P modelname=... polydegree=... number_of_splits=...
 ```
 
+## Run and serve the model locally
+Run the following command:
+```
+mlflow run https://github.com/lukyrasocha/ml-flow-azure --version main --experiment-name='lukr - Assignment3'
+```
+- `--version` is just the git branch (because mlflow defaultly assumes that the branch is `master`)
+- `--experiment-name` must be the same as is defined in the `main.py` 
+
+This will create a folder `mlruns` 
+
+Navigate into `mlruns > 1 > YOUR_RUN_ID > artifacts`
+
+Then run
+```
+mlflow models serve -m model
+```
+This will serve the model that was created by the specific run on your localhost (`127.0.0.1:5000`)
+
+
+## Get predictions from the model
+```
+curl 127.0.0.1:5000/invocations -H Content-Type: application/json -d {"columns": ["Speed", "Direction"], "data": [[10,"W"]]}
+```
+This will return a list of predictions (e.g. `[7.817]`)
