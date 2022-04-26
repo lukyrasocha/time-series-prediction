@@ -58,3 +58,4 @@ I set the default parameters to the ones that performed best, but if you wish to
 ```
 mlflow run . --experiment-name='lukr - Assignment3' -P modelname=... polydegree=... number_of_splits=...
 ```
+

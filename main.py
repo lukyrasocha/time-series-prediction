@@ -13,6 +13,7 @@ import argparse
 
 #SETUP
 mlflow.set_experiment("lukr - Assignment3")
+experiment = mlflow.get_experiment_by_name("lukr - Assignment3")
 #model = sys.argv[2] if len(sys.argv) > 1 else 'lin_reg' 
 #if model not in ['knn','lin_reg']:
 #    raise "Error: Argument not known: default{knn,lin_reg}"
@@ -41,7 +42,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # Start a run
 name = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {model}" 
-with mlflow.start_run(run_name=name):
+with mlflow.start_run(run_name=name, experiment_id=experiment.experiment_id):
 
     df = pd.read_json("data/dataset.json", orient="split")
     df = df.drop(['Source_time','Lead_hours','ANM','Non-ANM'],axis=1)
@@ -114,6 +115,6 @@ with mlflow.start_run(run_name=name):
             mlflow.log_metric(f"mean_{name}", mean_score)
             mlflow.log_metric(f"Variance_{name}", var_score)
 
-    mlflow.sklearn.log_model(pipeline, "model")
+#    mlflow.sklearn.log_model(pipeline, "model")
 
 
