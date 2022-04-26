@@ -84,3 +84,26 @@ This will serve the model that was created by the specific run on your localhost
 curl 127.0.0.1:5000/invocations -H Content-Type: application/json -d {"columns": ["Speed", "Direction"], "data": [[10,"W"]]}
 ```
 This will return a list of predictions (e.g. `[7.817]`)
+
+## Serve your model on a VM in Azure
+
+First in the azure web interface (or using the azure sdk) create a VM.
+SSH into it using your key-pair: `ssh -i <path_to_private_key> <username>@<PUBLIC_IP_OF_THE_VM>`
+
+```
+ssh -i ~/lukr lukyrasocha@20.67.184.90
+```
+
+Install miniconda onto your VM
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh
+bash Miniconda3-py39_4.10.3-Linux-x86_64.sh
+```
+
+Install `mlflow`
+```
+conda install -c conda-forge mlflow
+```
+
+
+
