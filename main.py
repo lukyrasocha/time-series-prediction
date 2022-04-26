@@ -158,6 +158,8 @@ with mlflow.start_run(run_name=name, experiment_id=experiment.experiment_id):
             mlflow.log_metric(f"mean_{name}", mean_score)
             mlflow.log_metric(f"Variance_{name}", var_score)
 
+    run = mlflow.active_run()
+    print("===== Run with run_id {} successfully finished =====".format(run.info.run_id))
     mlflow.sklearn.log_model(pipeline, "model")
 
 
