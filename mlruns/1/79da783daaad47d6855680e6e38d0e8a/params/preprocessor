@@ -1,4 +1,0 @@
-ColumnTransformer(transformers=[('numeric',
-                                 Pipeline(steps=[('imputer', SimpleImputer()),
-                                                 ('scaler', StandardScaler())]),
-                                 ['Speed'])...
