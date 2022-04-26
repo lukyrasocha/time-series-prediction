@@ -21,6 +21,7 @@ Note: If you comment these lines out, `mlflow` will track your experiments and s
 
 ## Prerequisities
 1. Conda [installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
+2. `pip install mlflow`
 
 ## How to run it
 
