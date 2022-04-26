@@ -43,7 +43,7 @@ python main.py --modelname=lin_reg --polydegree=3 --number_of_splits=5
 ```
 If you are running the experiment locally you can run `mlflow ui` to view the runs (or in Azure ML studio > Experiments otherwise)
 
-## Running it using `mlflow projects`
+## Run using `mlflow projects`
 
 ```
 git clone https://github.com/lukyrasocha/ml-flow-azure.git
