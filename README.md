@@ -109,7 +109,7 @@ Git clone this repo and serve the model on the VM
 ```
 git clone https://github.com/lukyrasocha/ml-flow-azure.git
 cd ml-flow-azure
-mlflow models serve -m model2 -h 0.0.0.0 -p 5000
+mlflow models serve -m best_model -h 0.0.0.0 -p 5000
 ```
 
 I am serving the model on my VM, you can try it out
