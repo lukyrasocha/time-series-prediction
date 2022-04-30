@@ -16,3 +16,6 @@ From the first assignment I know that the relationship between the dependent and
 mlflow run . --experiment-name='lukr - Assignment3' -P model_name=lin_reg -P poly_degre=X -P number_of_splits=X
 ```
 Where I put different values for `X`.
+
+
+![plot](./figures/knn_reg.png)
