@@ -19,3 +19,7 @@ Where I put different values for `X`.
 
 
 ![plot](./figures/knn_reg.png)
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](./figures/knn_reg.png)  |  ![](.figures/lin_reg.png)
