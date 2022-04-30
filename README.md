@@ -1,12 +1,14 @@
-# ml-flow-azure
+# Mlflow with Azure (tracking and deployment)
 
-Ml-flow ensures
-- Tracking
-- Reproducibility
-- Deployment
+## Prerequisities
+1. Conda [installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
+2. `pip install mlflow`
 
-Notes:
-There are 3 ways you can track your experiments, either you can choose to update your experiments on "https://training.itu.dk:5000/". Oryou can use Microsoft Azure Machine Learning Studio, or you can save them locally and use `mlflow ui` to display them on your localhost.
+## Notes
+
+Ml-flow ensures tracking, reproducibility and deployment
+
+There are 3 ways you could track the experiments, either you can choose to update your experiments on "https://training.itu.dk:5000/" (or any other personal url). Or you can use Microsoft Azure Machine Learning Studio, or you can save them locally and use `mlflow ui` to display them on your localhost.
 
 For this assignment I decided to track my experiments on Microsoft Azure ML studio, since the UI looks nice and also wanted to get more familiar with azure.
 
@@ -18,10 +20,6 @@ ws = Workspace.from_config()
 mlflow.set_tracking_uri(ws.get_mlflow_tracking_uri())
 ```
 Note: If you comment these lines out, `mlflow` will track your experiments and save them locally (you can view them on a `localhost` by running `mlflow ui`)
-
-## Prerequisities
-1. Conda [installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
-2. `pip install mlflow`
 
 ## How to run it
 
