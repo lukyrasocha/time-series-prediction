@@ -55,7 +55,7 @@ mlflow run . --experiment-name='lukr - Assignment3'
 ## Run with custom parameters
 I set the default parameters to the ones that performed best, but if you wish to change them here is an example:
 ```
-mlflow run . --experiment-name='lukr - Assignment3' -P modelname=... -P polydegree=... -P number_of_splits=...
+mlflow run . --experiment-name='lukr - Assignment3' -P model_name=... -P poly_degree=... -P number_of_splits=...
 ```
 
 ## Run and serve the model locally
@@ -109,8 +109,9 @@ Git clone this repo and serve the model on the VM
 ```
 git clone https://github.com/lukyrasocha/ml-flow-azure.git
 cd ml-flow-azure
-mlflow models serve -m best_model -h 0.0.0.0 -p 5000
+mlflow models serve -m best_model -h 0.0.0.0 -p 5000 &
 ```
+- The `&` at the end of the command ensures, that the model remains being served even when your `ssh` connection expires.
 
 I am serving the model on my VM, you can try it out
 ```
