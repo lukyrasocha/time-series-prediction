@@ -17,9 +17,6 @@ mlflow run . --experiment-name='lukr - Assignment3' -P model_name=lin_reg -P pol
 ```
 Where I put different values for `X`.
 
-
-![plot](./figures/knn_reg.png)
-
-Solarized dark             |  Solarized Ocean
+Linear Regression Runs           |  KNN Regression Runs
 :-------------------------:|:-------------------------:
-![](./figures/knn_reg.png)  |  ![](./figures/lin_reg.png)
+![](./figures/lin_reg.png)  |  ![](./figures/knn_reg.png)
