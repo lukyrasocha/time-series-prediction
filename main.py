@@ -18,9 +18,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.compose import ColumnTransformer
-
-
-
+from matplotlib import pyplot as plt 
 
 #UNCOMMENT THESE TWO LINES IF YOU WISH TO EXPERIMENT REMOTELY BASED ON YOUR CONFIG FILE INCLUDED IN THE SAME DIRECTORY
 #ws = Workspace.from_config()
@@ -31,13 +29,11 @@ mlflow.set_experiment("lukr - Assignment3")
 experiment = mlflow.get_experiment_by_name("lukr - Assignment3")
 
 parser = argparse.ArgumentParser()
-
 parser.add_argument("-poly", "--polydegree",type=int)
 parser.add_argument("-model", "--modelname",type=str)
 parser.add_argument("-splits", "--number_of_splits",type=int)
 parser.add_argument("-n_neigh", "--n_neighbours", type=int)
 parser.add_argument("-w", "--weights", type=str)
-
 args = parser.parse_args()
 
 model = args.modelname
@@ -76,7 +72,6 @@ with mlflow.start_run(run_name=name, experiment_id=experiment.experiment_id):
                 X_.loc[X_["Direction"] == direction, "Direction"] = cardinal_directions[direction]
                         
             return X_
-        
         
     numeric_transformer = Pipeline(steps=[
            ('imputer', SimpleImputer(strategy='mean'))
@@ -120,7 +115,6 @@ with mlflow.start_run(run_name=name, experiment_id=experiment.experiment_id):
         mlflow.log_param('weights', weights)
         mlflow.log_param("number_of_splits", number_of_splits)
 
-    # TODO: Currently the only metric is MAE. You should add more. What other metrics could you use? Why?
     metrics = [
         ("MAE", mean_absolute_error, []),
         ("MSE", mean_squared_error, []),
@@ -129,20 +123,22 @@ with mlflow.start_run(run_name=name, experiment_id=experiment.experiment_id):
 
     X = df[["Speed","Direction"]]
     y = df["Total"]
-
-
-    #TODO: Log your parameters. What parameters are important to log?
-    #HINT: You can get access to the transformers in your pipeline using `pipeline.steps`
-    
+    i = 0
     for train, test in TimeSeriesSplit(number_of_splits).split(X,y):
+        i += 1 
         pipeline.fit(X.iloc[train],y.iloc[train])
         predictions = pipeline.predict(X.iloc[test])
         truth = y.iloc[test]
 
- #       from matplotlib import pyplot as plt 
- #       plt.plot(truth.index, truth.values, label="Truth")
- #       plt.plot(truth.index, predictions, label="Predictions")
- #       plt.show()
+        fig = plt.figure()
+        ax = fig.add_axes([0,0,1,1])
+        #plt.plot(truth.index, truth.values, label="Truth")
+        #plt.plot(truth.index, predictions, label="Predictions")
+        ax.set_title(f'Split {i}')
+        ax.plot(truth.index, truth.values, label="Truth")
+        ax.plot(truth.index, predictions, label="Predictions")
+        ax.legend()
+        mlflow.log_figure(fig, f'split_{i}.png')
         
         # Calculate and save the metrics for this fold
         for name, func, scores in metrics:
@@ -151,17 +147,15 @@ with mlflow.start_run(run_name=name, experiment_id=experiment.experiment_id):
     
     # Log a summary of the metrics
     for name, _, scores in metrics:
-            # NOTE: Here we just log the mean of the scores. 
-            # Are there other summarizations that could be interesting?
             mean_score = sum(scores)/number_of_splits
             var_score = np.var(scores)
             mlflow.log_metric(f"mean_{name}", mean_score)
             mlflow.log_metric(f"Variance_{name}", var_score)
 
     run = mlflow.active_run()
-    print('====================================================')
+    print('=============================================================================')
     print("===== Run with run_id {} successfully finished =====".format(run.info.run_id))
-    print('====================================================')
+    print('=============================================================================')
     mlflow.sklearn.log_model(pipeline, "model")
 
 
