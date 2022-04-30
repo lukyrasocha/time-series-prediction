@@ -22,4 +22,4 @@ Where I put different values for `X`.
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](./figures/knn_reg.png)  |  ![](.figures/lin_reg.png)
+![](./figures/knn_reg.png)  |  ![](./figures/lin_reg.png)
