@@ -111,7 +111,7 @@ git clone https://github.com/lukyrasocha/ml-flow-azure.git
 cd ml-flow-azure
 mlflow models serve -m best_model -h 0.0.0.0 -p 5000 &
 ```
-- The `&` at the end of the command ensures, that the model remains being served even when your `ssh` connections expires.
+- The `&` at the end of the command ensures, that the model remains being served even when your `ssh` connection expires.
 
 I am serving the model on my VM, you can try it out
 ```
