@@ -57,7 +57,7 @@ mlflow run . --experiment-name='lukr - Assignment3'
 ## Run with custom parameters
 I set the default parameters to the ones that performed best, but if you wish to change them here is an example:
 ```
-mlflow run . --experiment-name='lukr - Assignment3' -P modelname=... polydegree=... number_of_splits=...
+mlflow run . --experiment-name='lukr - Assignment3' -P modelname=... -P polydegree=... -P number_of_splits=...
 ```
 
 ## Run and serve the model locally
