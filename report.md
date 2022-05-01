@@ -75,7 +75,7 @@ curl http://20.67.184.90:5000/invocations -H 'Content-Type: application/json' -d
 ## Discussion of Mlflow and other alternatives
 In this section I'd like to discuss the advantages of using `Mlflow` for your machine learning lifecycle and comparing the tool with other reproducability options.
 
-An ML reproducable system is a system that can be repeatedly run on certain datasets and obtains the same (or similar) results. To achieve this can be crucial, since we wish to be able to run our system on every machine and obtain the same results.
+An ML reproducable system is a system that can be repeatedly run on certain datasets and obtains the same (or similar) results. To achieve this can be crucial, since we wish to be able to run our system on all kinds of machines and obtain the same results.
 
 As stated in the lecture we should look at ML models as software derived from data and thus should follow the same rules especially when we want to achieve concepts such as continuous integration/continuous development pipelines (MLOps).
 
@@ -94,7 +94,7 @@ train, reuse, and deploy models with any library and package them into reproduci
 
 That came handy, when deploying the model on `Azure VM`, since `mlflow` takes care of downloading all the necessary dependencies inside a new virtual environment so that running your project locally is exactly the same as running it on a remote VM.
 
-To mention some other methods, one could build a `docker image` and run the workflow inside a container which also enables reproducability across different machines and systems. Or can could use `Poetry` or `Pipenv` which are virtual environments and package management tools (they however don't incude features such as experiment logging, model deployment etc.). Conclusively there are a lot of tools that can work together to achieve same results as `mlflow`, but with comparison, `mlflow` is an easy and intuitive tool to use which contains a lot of useful functionalities for all kinds of ML related problems. 
+To mention some alternative methods for reproducable systems, one could build a `docker image` and run the workflow inside a container which also enables reproducability across different machines and systems. Or using tools such as `Poetry` or `Pipenv` which are virtual environments and package management tools (they however don't incude features such as experiment logging, model deployment etc.). Conclusively there are a lot of tools that can work together to achieve same results as `mlflow`, but with comparison, `mlflow` is an easy and intuitive tool to use which contains a lot of useful functionalities for all kinds of ML related problems. 
 
 ## Final notes
 I recommend to read through the thorough [README](https://github.com/lukyrasocha/mlflow-azure/blob/main/README.md) to get to know the exact implementation and steps for reproduction.
