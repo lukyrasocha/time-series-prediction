@@ -42,6 +42,9 @@ The best performing model had the following properties
 - Degree of polynomial: 4
 - Number of splits: 6
 
+To further analyse the different number of folds for the cross validation we can look at the figure below
+![](./figures/number_of_splits_best.png)
+
 And scored:
 - `r2: 0.657`
 - `Mean MSE: 37.36`
