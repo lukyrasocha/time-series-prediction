@@ -52,3 +52,14 @@ And scored:
 
 For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots.
 ![split_1](./figures/split_1.png)
+
+
+
+
+
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png">  blah |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png">|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png">|
+
