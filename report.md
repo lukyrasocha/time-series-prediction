@@ -44,10 +44,6 @@ The best performing model had the following properties
 
 To further analyse the different number of folds for the cross validation we can look at the figure below
 
-<p align="center">
-  <img width="460" height="300" src="./figures/number_of_splits_best.png">
-</p>
-
 And scored:
 - `r2: 0.657`
 - `Mean MSE: 37.36`
@@ -55,6 +51,12 @@ And scored:
 - `MSE Variance: 62.6`
 - `MAE Variance: 0.392`
 - `R2 Variance: 0.013`
+
+To furher analyse how the number of folds for the cross validation affect the score of the best model we can look at the figure below.
+<p align="center">
+  <img width="460" height="300" src="./figures/number_of_splits_best.png">
+</p>
+
 
 For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots. Below we can see how the model predicted the power production (tested on the 6 different `test` splits) and the actual power production that day. (x axis are the dates and y axis the power).
 
