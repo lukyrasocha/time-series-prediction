@@ -16,11 +16,11 @@ lin_reg = lin_reg.loc[(lin_reg.ids != 17) & (lin_reg.ids !=18)]
 plt.figure(1)
 plt.title('Linear Regression Runs')
 sns.barplot(x="ids", y="mean_r2", data=lin_reg,linewidth=2.5, facecolor=(1, 1, 1, 0),errcolor=".2", edgecolor=".2")
-plt.savefig('lin_reg.png')
+#plt.savefig('lin_reg.png')
 plt.figure(2)
 plt.title('KNN Regression Runs')
 sns.barplot(x="ids", y="mean_r2", data=knn_reg,linewidth=2.5, facecolor=(1, 1, 1, 0),errcolor=".2", edgecolor=".2")
-plt.savefig('knn_reg.png')
+#plt.savefig('knn_reg.png')
 
 print('Best Lin regression')
 print(lin_reg[lin_reg['mean_r2'] == max(lin_reg['mean_r2'])])
@@ -28,3 +28,7 @@ print(lin_reg[lin_reg['mean_r2'] == max(lin_reg['mean_r2'])])
 print('Best KNN')
 print(knn_reg[knn_reg['mean_r2'] == max(knn_reg['mean_r2'])])
 
+best = lin_reg.loc[(lin_reg['poly_degree'] == 4)]
+plt.figure(3)
+sns.barplot(x="number_of_splits", y="mean_r2", data=best,linewidth=2.5, facecolor=(1, 1, 1, 0),errcolor=".2", edgecolor=".2")
+plt.savefig('number_of_splits_best.png')
