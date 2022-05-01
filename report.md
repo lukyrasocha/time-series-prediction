@@ -66,7 +66,7 @@ For each of the experiment runs I used `mlflow` to store artifacts such as the t
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png"> Split 1|  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_2.png"> Split 2|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_3.png"> Split 3|
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_4.png"> Split 4|  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_5.png"> Split 5|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_6.png"> Split 6|
 
-From the above figures (unseen test data) we can see that the model was able to learn and follow the trend of the real power data, thus the generalization of the model is quite well.
+From the above figures (unseen test data) we can see that the model was able to learn and follow the trend of the real power data, thus the generalization of the model is quite good.
 
 The model is currently hosted on `Azure VM` as a background process (using nohup command) and can be tested:
 ```
