@@ -32,7 +32,9 @@ Then I put various values for `X` to experiment with different hyperparameters. 
 <p align="center">
   <img src="./figures/lin_knn_runs.png">
 </p>
+
 (Mean r2 is the average over all the r2 scores from the different k-folds in cross validation).
+
 
 After this analysis I found the best performing model from the mean of `r2 scores` over the splits as this metric shows how well the model explains the variance of the data and is correlated with MAE and other regression metrics.
 
@@ -40,8 +42,6 @@ The best performing model had the following properties
 - model: Linear Regression
 - Degree of polynomial: 4
 - Number of splits: 6
-
-To further analyse the different number of folds for the cross validation we can look at the figure below
 
 And scored:
 - `r2: 0.657`
