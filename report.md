@@ -84,7 +84,7 @@ Core elements of a ML reproducable system:
 - Data: Adding new datasets, data distribution and sample changes will affect the outcome of a model. Dataset versioning and change tracking must be recorded to achieve reproducibility.
 - Environment: For a project to be reproducible, the environment it was built in must be captured. Framework dependencies, versions, the hardware used, and all other parts of the environment must be logged and easy to reproduce.
 
-These concepts is something that `mlflow` can help with. There are 3 main tools that `mlflow` offers which make the ML lifecycle much more convenient:
+These concepts is something that `mlflow` can help with. There are 3 main tools that `mlflow` offers which make the ML lifecycle much more effortless:
 - MLflow Tracking: is used to record a clear overview of the performance of the experiment runs (together with parameters and artifacts)
 - MLflow Projects: Enables a user to easily reproduce models with its corresponding code on any platform.
 - MLflow Models: Packages models in a standard format so that they can be served as an endpoint through a REST API
@@ -101,6 +101,12 @@ I recommend to read through the thorough [README](https://github.com/lukyrasocha
 
 ## References
 https://www.mlflow.org/docs/latest/concepts.html
+
+
 https://neptune.ai/blog/ways-ml-teams-use-ci-cd-in-production
+
+
 https://neptune.ai/blog/how-to-solve-reproducibility-in-ml
+
+
 https://learnit.itu.dk/pluginfile.php/295845/course/section/135117/Enterprise-grade%20ML.pdf
