@@ -36,8 +36,15 @@ Linear Regression Runs           |  KNN Regression Runs
 
 After this analysis I found the best performing model from the mean of `r2 scores` over the splits as this metric shows how well the model explains the variance of the data and is correlated with MAE and other regression metrics.
 
-This setup had the following properties
+The best performing model had the following properties
 - model: Linear Regression
 - Degree of polynomial: 4
 - Number of splits: 6
 
+And scored:
+- `r2: 0.657`
+- `Mean MSE: 37.36`
+- `Mean MAE: 4.77`
+- `MSE Variance: 62.6`
+- `MAE Variance: 0.392`
+- `R2 Variance: 0.013`
