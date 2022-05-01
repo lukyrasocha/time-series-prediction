@@ -71,6 +71,9 @@ The model is currently hosted on `Azure VM` as a background process (using nohup
 ```
 curl http://20.67.184.90:5000/invocations -H 'Content-Type: application/json' -d '{"columns": ["Speed", "Direction"], "data": [[10,"W"]]}'
 ```
+## Discussion of Mlflow and other alternatives
+The advantages of packaging the experiments/models in the MLflow formats and a comparison with other reproducibility options.
+You might find it easier to discuss the evaluation metrics by plotting them as a function of the model and cross-validation parameters. Consider using some of the error metrics, statis- tics and visualisation methods described in the lectures. You should discuss the evaluation errors in relation to the generalisation power of the models. When describing the advantages of packaging models, make sure you highlight the key features of reproducible ML systems.
 
 ## Final notes
 I really advice to read through the thorough [README](https://github.com/lukyrasocha/mlflow-azure/blob/main/README.md) to get to know the exact implementation and steps for reproduction.
