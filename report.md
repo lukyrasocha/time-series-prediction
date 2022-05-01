@@ -60,6 +60,6 @@ For each of the experiment runs I used `mlflow` to store artifacts such as the t
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png"> |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_2.png">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_3.png">|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png"> Split 1|  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_2.png">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_3.png">|
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_4.png">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_5.png">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_6.png">|
 
