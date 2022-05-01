@@ -50,7 +50,7 @@ And scored:
 - `MAE Variance: 0.392`
 - `R2 Variance: 0.013`
 
-For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots.
+For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots. Below we can see how the model predicted the power production (tested on the 6 different `test` splits) and the actual power production that day. (x axis are the dates and y axis the power).
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
