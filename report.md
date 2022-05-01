@@ -67,7 +67,7 @@ For each of the experiment runs I used `mlflow` to store artifacts such as the t
 
 From the above figures we can see that the model was able to learn and follows the trend of the real power data.
 
-The model is currently hosted on `Azure VM` and can be tested:
+The model is currently hosted on `Azure VM` as a background process (using nohup command) and can be tested:
 ```
 curl http://20.67.184.90:5000/invocations -H 'Content-Type: application/json' -d '{"columns": ["Speed", "Direction"], "data": [[10,"W"]]}'
 ```
