@@ -32,7 +32,7 @@ Then I put different values for `X` to experiment with different hyperparameters
 In the below figures I plotted all the runs and compared their `mean r^2 score` over the different splits
 
 <p align="center">
-  <img width="460" height="300" src="./figures/lin_knn_runs.png">
+  <img src="./figures/lin_knn_runs.png">
 </p>
 
 
