@@ -27,14 +27,12 @@ For KNN Regressor I ran similar experiments with different hyperparameters
 mlflow run . --experiment-name='lukr - Assignment3' -P model_name=knn_reg -P number_of_splits=X -P n_neighbours=X -P weights=X
 ```
 
-Then I put different values for `X` to experiment with different hyperparameters.
-
-In the below figures I plotted all the runs and compared their `mean r^2 score` over the different splits
+Then I put various values for `X` to experiment with different hyperparameters. I used `mlflow` to log the different parameters and metrics that I could then plot to compare the runs. 
 
 <p align="center">
   <img src="./figures/lin_knn_runs.png">
 </p>
-
+(Mean r2 is the average over all the r2 scores from the different k-folds in cross validation).
 
 After this analysis I found the best performing model from the mean of `r2 scores` over the splits as this metric shows how well the model explains the variance of the data and is correlated with MAE and other regression metrics.
 
