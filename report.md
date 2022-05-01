@@ -35,9 +35,8 @@ Then I put various values for `X` to experiment with different hyperparameters. 
 
 (Mean r2 is the average over all the r2 scores from the different k-folds in cross validation).
 
-
-After this analysis I found the best performing model from the mean of `r2 scores` over the splits as this metric shows how well the model explains the variance of the data and is correlated with MAE and other regression metrics.
-
+As any regression task, the goal is to find a model whose predictions are as close to the real values as possible, therefore metrics such as `MSE` or `MAE` nicely summarize how the model on average deviates from the desired values (for example `MSE = 0` would mean that the model predicted all the target values precisely). To choose the best model I however looked at `r2 score` since this metric shows how well the model explains the variance of the data which is correlated with the other metrics as well.
+ 
 The best performing model had the following properties
 - model: Linear Regression
 - Degree of polynomial: 4
