@@ -21,12 +21,13 @@ From the first assignment I know that the relationship between the dependent and
 ```
 mlflow run . --experiment-name='lukr - Assignment3' -P model_name=lin_reg -P poly_degre=X -P number_of_splits=X
 ```
-Then I put different values for `X`.
 
 For KNN Regressor I ran similar experiments with different hyperparameters
 ```
 mlflow run . --experiment-name='lukr - Assignment3' -P model_name=knn_reg -P number_of_splits=X -P n_neighbours=X -P weights=X
 ```
+
+Then I put different values for `X` to experiment with different hyperparameters.
 
 In the below figures I plotted all the runs and compared their `mean r^2 score` over the different splits
 
