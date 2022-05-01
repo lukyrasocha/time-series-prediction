@@ -97,7 +97,7 @@ That came handy, when deploying the model on `Azure VM`, since `mlflow` takes ca
 To mention some other methods, one could build a `docker image` and run the workflow inside a container which also enables reproducability across different machines and systems. Or can could use `Poetry` or `Pipenv` which are virtual environments and package management tools (they however don't incude features such as experiment logging, model deployment etc.). Conclusively there are a lot of tools that can work together to achieve same results as `mlflow`, but with comparison, `mlflow` is an easy and intuitive tool to use which contains a lot of useful functionalities for all kinds of ML related problems. 
 
 ## Final notes
-I really advice to read through the thorough [README](https://github.com/lukyrasocha/mlflow-azure/blob/main/README.md) to get to know the exact implementation and steps for reproduction.
+I recommend to read through the thorough [README](https://github.com/lukyrasocha/mlflow-azure/blob/main/README.md) to get to know the exact implementation and steps for reproduction.
 
 ## References
 https://www.mlflow.org/docs/latest/concepts.html
