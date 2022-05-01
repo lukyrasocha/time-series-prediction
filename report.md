@@ -14,11 +14,11 @@ To compare the different models and their variations I used the following metric
 - Mean Absolute Error
 - Mean Squared Error
 - R2 score
-- Variance of MAE and MSE over the different splits
+- Variance of MAE and MSE and R2 over the different splits
 
 ## Results
 
-From the first assignment I know that the relationship between the dependent and independent variable is nonlinear, I therefore first started experimenting with `Linear Regression` and `Polynomial Features`. By running the following command
+From the first assignment I know that the relationship between the dependent and independent variable is nonlinear, I therefore first started experimenting with `Linear Regression` and `Polynomial Features` by running the following command.
 
 ```
 mlflow run . --experiment-name='lukr - Assignment3' -P model_name=lin_reg -P poly_degre=X -P number_of_splits=X
