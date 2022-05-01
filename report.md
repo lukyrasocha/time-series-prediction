@@ -31,9 +31,10 @@ Then I put different values for `X` to experiment with different hyperparameters
 
 In the below figures I plotted all the runs and compared their `mean r^2 score` over the different splits
 
-Linear Regression Runs           |  KNN Regression Runs
-:-------------------------:|:-------------------------:
-![](./figures/lin_reg.png)  |  ![](./figures/knn_reg.png)
+<p align="center">
+  <img width="460" height="300" src="./figures/lin_knn_runs.png">
+</p>
+
 
 After this analysis I found the best performing model from the mean of `r2 scores` over the splits as this metric shows how well the model explains the variance of the data and is correlated with MAE and other regression metrics.
 
