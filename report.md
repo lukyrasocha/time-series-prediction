@@ -49,3 +49,6 @@ And scored:
 - `MSE Variance: 62.6`
 - `MAE Variance: 0.392`
 - `R2 Variance: 0.013`
+
+For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots.
+![split_1](./figures/split_1.png)
