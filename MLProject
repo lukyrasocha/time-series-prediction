@@ -6,8 +6,8 @@ entry_points:
   main:
     parameters:
       model_name: {type: str, default: lin_reg}
-      poly_degree: {type: int, default: 3}
-      number_of_splits: {type: int, default: 5}
+      poly_degree: {type: int, default: 4}
+      number_of_splits: {type: int, default: 6}
       n_neighbours: {type: int, default: 8}
       weights: {type: str, default: uniform}
 
