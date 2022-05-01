@@ -8,7 +8,7 @@ In this report I will discuss how I used `mlflow` (an open source tool for machi
 
 ## Your choice of models and evaluation metrics
 
-The task is to find the best performing regressor trained on historical data, that can predict power production from given weather forecast. The data comes from a static `json` file and contains many features. To train the model I however used only `Wind Speed` and `Wind Direction`. I experimented with two different regressors `Linear Regression` and `K neighbours regressor`.
+The task is to find the best performing regressor trained on historical data, that can predict power production from given weather forecast. The data comes from a static `json` file and contains many features. To train the model I however used only `Wind Speed` and `Wind Direction`. I experimented with two different regressors `Linear Regression` and `KNN regressor` (the exact pipeline can be seen in assignment 1).
 
 To compare the different models and their variations I used the following metrics
 - Mean Absolute Error
@@ -42,6 +42,8 @@ The best performing model had the following properties
 - Degree of polynomial: 4
 - Number of splits: 6
 
+To further analyse the different number of folds for the cross validation we can look at the figure below
+
 And scored:
 - `r2: 0.657`
 - `Mean MSE: 37.36`
@@ -49,6 +51,12 @@ And scored:
 - `MSE Variance: 62.6`
 - `MAE Variance: 0.392`
 - `R2 Variance: 0.013`
+
+To furher analyse how the number of folds for the cross validation affect the score of the best model we can look at the figure below.
+<p align="center">
+  <img width="460" height="300" src="./figures/number_of_splits_best.png">
+</p>
+
 
 For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots. Below we can see how the model predicted the power production (tested on the 6 different `test` splits) and the actual power production that day. (x axis are the dates and y axis the power).
 
@@ -58,3 +66,14 @@ For each of the experiment runs I used `mlflow` to store artifacts such as the t
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_4.png"> Split 4|  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_5.png"> Split 5|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_6.png"> Split 6|
 
 From the above figures we can see that the model was able to learn and follows the trend of the real power data.
+
+The model is currently hosted on `Azure VM` as a background process (using nohup command) and can be tested:
+```
+curl http://20.67.184.90:5000/invocations -H 'Content-Type: application/json' -d '{"columns": ["Speed", "Direction"], "data": [[10,"W"]]}'
+```
+## Discussion of Mlflow and other alternatives
+The advantages of packaging the experiments/models in the MLflow formats and a comparison with other reproducibility options.
+You might find it easier to discuss the evaluation metrics by plotting them as a function of the model and cross-validation parameters. Consider using some of the error metrics, statis- tics and visualisation methods described in the lectures. You should discuss the evaluation errors in relation to the generalisation power of the models. When describing the advantages of packaging models, make sure you highlight the key features of reproducible ML systems.
+
+## Final notes
+I really advice to read through the thorough [README](https://github.com/lukyrasocha/mlflow-azure/blob/main/README.md) to get to know the exact implementation and steps for reproduction.
