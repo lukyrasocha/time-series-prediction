@@ -52,7 +52,7 @@ And scored:
 - `MAE Variance: 0.392`
 - `R2 Variance: 0.013`
 
-To furher analyse how the number of folds for the cross validation affect the score of the best model we can look at the figure below. We can see that the score doesnt vary that much (`r2 variance: 0.013`).
+To furher analyse how the number of folds for the cross validation affect the score of the best model we can look at the figure below. We can see that the score doesn't vary that much (`r2 variance: 0.013`).
 
 <p align="center">
   <img width="460" height="300" src="./figures/number_of_splits_best.png">
@@ -75,7 +75,7 @@ curl http://20.67.184.90:5000/invocations -H 'Content-Type: application/json' -d
 ## Discussion of Mlflow and other alternatives
 In this section I'd like to discuss the advantages of using `Mlflow` for your machine learning lifecycle and comparing the tool with other reproducability options.
 
-An ML reproducable system is a system that can be repeatedly run on certain datasets and obtains the same (or similar) results. To achieve this can be crucial, since we wish to be able to run our system on all kinds of machines and obtain the same results.
+An ML reproducable system is a system that can be repeatedly run on certain datasets and obtains the same (or similar) results. To achieve this can be crucial, since we wish to be able to run our system on all kinds of machines and obtain the same outcomes.
 
 As stated in the lecture we should look at ML models as software derived from data and thus should follow the same rules especially when we want to achieve concepts such as continuous integration/continuous development pipelines (MLOps).
 
