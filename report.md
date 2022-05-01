@@ -50,5 +50,11 @@ And scored:
 - `MAE Variance: 0.392`
 - `R2 Variance: 0.013`
 
-For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots.
-![split_1](./figures/split_1.png)
+For each of the experiment runs I used `mlflow` to store artifacts such as the trained model and some relevant matplotlib plots. Below we can see how the model predicted the power production (tested on the 6 different `test` splits) and the actual power production that day. (x axis are the dates and y axis the power).
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_1.png"> Split 1|  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_2.png"> Split 2|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_3.png"> Split 3|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_4.png"> Split 4|  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_5.png"> Split 5|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_6.png"> Split 6|
+
+From the above figures we can see that the model was able to learn and follows the trend of the real power data.
