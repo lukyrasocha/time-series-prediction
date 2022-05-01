@@ -8,7 +8,7 @@ In this report I will discuss how I used `mlflow` (an open source tool for machi
 
 ## Your choice of models and evaluation metrics
 
-The task is to find the best performing regressor trained on historical data, that can predict power production from given weather forecast. The data comes from a static `json` file and contains many features. To train the model I however used only `Wind Speed` and `Wind Direction`. I experimented with two different regressors `Linear Regression` and `K neighbours regressor`.
+The task is to find the best performing regressor trained on historical data, that can predict power production from given weather forecast. The data comes from a static `json` file and contains many features. To train the model I however used only `Wind Speed` and `Wind Direction`. I experimented with two different regressors `Linear Regression` and `KNN regressor` (the exact pipeline can be seen in assignment 1).
 
 To compare the different models and their variations I used the following metrics
 - Mean Absolute Error
@@ -66,3 +66,11 @@ For each of the experiment runs I used `mlflow` to store artifacts such as the t
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_4.png"> Split 4|  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_5.png"> Split 5|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./figures/split_6.png"> Split 6|
 
 From the above figures we can see that the model was able to learn and follows the trend of the real power data.
+
+The model is currently hosted on `Azure VM` and can be tested:
+```
+curl http://20.67.184.90:5000/invocations -H 'Content-Type: application/json' -d '{"columns": ["Speed", "Direction"], "data": [[10,"W"]]}'
+```
+
+## Final notes
+I really advice to read through the thorough [README](https://github.com/lukyrasocha/mlflow-azure/blob/main/README.md) to get to know the exact implementation and steps for reproduction.
