@@ -1,4 +1,4 @@
-# Mlflow with Azure (tracking and deployment)
+# Timeseries prediction with Mlflow and Azure tracking and deployment
 
 ## Prerequisities
 1. Conda [installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
